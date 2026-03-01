@@ -13,7 +13,8 @@ resource "aws_dynamodb_table" "video" {
     type = "S"
   }
 
-
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
 
   global_secondary_index {
     name               = "videoId-userid-index"
